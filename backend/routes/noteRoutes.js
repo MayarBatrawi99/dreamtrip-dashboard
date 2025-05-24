@@ -4,7 +4,7 @@ import {
   getNotesByTrip,
   updateNote,
   deleteNote,
-} from "../controllers/notesController.js";
+} from "../controllers/noteController.js";
 import { protect } from "../middleware/authMiddleware.js";
 
 const router = express.Router();

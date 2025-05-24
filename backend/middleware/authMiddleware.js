@@ -1,6 +1,6 @@
 // middleware/authMiddleware.js
 import jwt from "jsonwebtoken";
-import User from "../models/userModel.js";
+import User from "../models/User.js";
 import asyncHandler from "express-async-handler";
 
 // Middleware to protect routes and extract user from token

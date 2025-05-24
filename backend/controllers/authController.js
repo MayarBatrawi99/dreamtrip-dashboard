@@ -26,7 +26,7 @@ export const registerUser = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, salt);
 
         //Create user
-        const user = await User.user({
+        const user = await User.create({
             username,
             email,
             password: hashedPassword
@@ -47,7 +47,7 @@ export const registerUser = async (req, res) => {
 // @route   POST /api/auth/login
 // @access  Public
 export const loginUser = async (req, res) => {
-    const { username, email, password } = req.body;
+    const {  email, password } = req.body;
 
     try {
         //Find user
@@ -61,7 +61,6 @@ export const loginUser = async (req, res) => {
         // Respond with token and user data
         res.status(200).json({
             _id: user._id,
-            username: user.username,
             email: user.email,
             token: generateToken(user._id),
         });

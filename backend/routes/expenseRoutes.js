@@ -4,7 +4,7 @@ import {
   getExpensesByTrip,
   updateExpense,
   deleteExpense,
-} from "../controllers/expensesController.js";
+} from "../controllers/expenseController.js";
 import { protect } from "../middleware/authMiddleware.js";
 
 const router = express.Router();

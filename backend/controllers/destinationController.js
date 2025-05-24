@@ -1,4 +1,4 @@
-import Destination from "../models/Destination";
+import Destination from "../models/Destination.js";
 
 // @desc    Create a new destination
 export const createDestination = async (req, res) => {

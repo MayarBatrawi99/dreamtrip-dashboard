@@ -1,4 +1,4 @@
-import Checklist from "../models/ChecklistItem";
+import Checklist from "../models/ChecklistItem.js";
 
 // @desc    Create a checklist item
 // @route   POST /api/checklists

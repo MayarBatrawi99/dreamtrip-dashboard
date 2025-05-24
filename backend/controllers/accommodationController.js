@@ -1,4 +1,4 @@
-import Accomodation from "../models/Accommodation";
+import Accommodation from "../models/Accommodation.js";
 
 // @desc    Create an accommodation
 // @route   POST /api/accommodation
@@ -6,7 +6,7 @@ import Accomodation from "../models/Accommodation";
 
 export const createAccommodation = async (req,res)=>{
     try{
-        const accommodation = await Accomodation.create({
+        const accommodation = await Accommodation.create({
             user: req.user._id,
             trip: req.body.trip,
             placeName: req.body.placeName,
@@ -28,7 +28,7 @@ export const createAccommodation = async (req,res)=>{
 
 export const getAccommodationsByTrip= async(req,res)=>{
     try{
-        const list = await Accomodation.find({trip:req.params.tripId,user:req.user._id});
+        const list = await Accommodation.find({trip:req.params.tripId,user:req.user._id});
         res.json(list);
 
     } catch(err) {
@@ -40,7 +40,7 @@ export const getAccommodationsByTrip= async(req,res)=>{
 // @desc    Update accommodation
 // @route   PUT /api/accommodations/:id
 // @access  Private
-exports.updateAccommodation = async (req, res) => {
+export const updateAccommodation = async (req, res) => {
     try {
       const updated = await Accommodation.findByIdAndUpdate(req.params.id, req.body, { new: true });
       if (!updated) return res.status(404).json({ message: 'Not found' });
@@ -53,7 +53,7 @@ exports.updateAccommodation = async (req, res) => {
   // @desc    Delete accommodation
 // @route   DELETE /api/accommodations/:id
 // @access  Private
-  exports.deleteAccommodation = async (req, res) => {
+  export const deleteAccommodation = async (req, res) => {
     try {
       const deleted = await Accommodation.findByIdAndDelete(req.params.id);
       if (!deleted) return res.status(404).json({ message: 'Not found' });
