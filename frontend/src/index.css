@@ -1,40 +1,50 @@
+/* Global CSS variables */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --primary-bg-start: #24246f; /* Deep Blue */
+  --primary-bg-end: #ac7cdc;   /* Lighter Purple */
+  --primary-bg-center:#43399e;
+  --card-bg-light: rgba(255, 255, 255, 0.1); /* Semi-transparent white for glass effect */
+  --card-border-light: rgba(255, 255, 255, 0.2);
+  --text-color-light: #ffffff;
+  --text-color-dark: #333333;
+  --button-primary-bg: #6a00ff;
+  --button-primary-hover: #7b00ff;
+  --button-secondary-bg: rgba(255, 255, 255, 0.2);
+  --button-secondary-hover: rgba(255, 255, 255, 0.3);
+  --font-family: 'Roboto', sans-serif;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+/* Basic reset and ensure full height/width */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensures #root takes full height */
+  width: 100%;  /* Ensures #root takes full width */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  background-color: var(--primary-bg-start); /* Fallback/initial background */
+  display: flex; /* Helps ensure #root fills */
+  justify-content: center;
+  align-items: flex-start; /* Align content to the top */
+  overflow-y: auto; /* Allow vertical scrolling if content exceeds viewport */
+}
+
+/* General Link and Button styles if not defined in components */
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #646cff; /* Example default link color */
   text-decoration: inherit;
 }
 a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
+/* You can remove these if all buttons are styled specifically in components */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -54,10 +64,15 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0; /* Reset default margins */
+}
+
+/* Light mode preferences, if applicable */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    /* background-color: #ffffff; We will let LandingPage handle the background */
   }
   a:hover {
     color: #747bff;

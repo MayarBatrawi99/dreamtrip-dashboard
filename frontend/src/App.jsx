@@ -1,35 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import Navbar from "./components/Navbar"; // Correct path
+import LandingPage from "./pages/LandingPage"; // Correct path
+import "./App.css"; // App-wide styles if any, or general styling can be in index.css
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      {/* Navbar is now handled by LandingPage itself, or can be placed here if it's truly global outside LandingPage */}
+      {/* For this design, let's keep it within LandingPage as it's tightly coupled to its max-width and background */}
+      <LandingPage />
+    </div>
+  );
 }
 
-export default App
+export default App;
