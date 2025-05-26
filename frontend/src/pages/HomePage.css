@@ -1,0 +1,256 @@
+/* homePage specific styling */
+
+.home-page-container {
+  min-height: 100vh;
+  /* Apply the full-page gradient here - using refined colors */
+  background: linear-gradient(135deg, var(--primary-bg-start),var(--primary-bg-center) ,var(--primary-bg-end));
+  color: var(--text-color-light);
+  display: flex;
+  flex-direction: column;
+  /* Removed align-items here, as hero-section will handle it */
+  padding: 0 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  /* Add subtle background elements if needed for depth later */
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  justify-content: space-around; /* Distribute items with space around them */
+  /* REVERTED: Align items back to center for overall section alignment */
+  align-items: center; /* Vertically center aligned content */
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  padding: 50px 0;
+  position: relative;
+  gap: 60px; /* Adjusted gap between text and card */
+  margin-top: 110px; /* Space from navbar */
+  margin-bottom: 50px;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 320px;
+  max-width: 500px; /* Constrain max-width for cleaner text wrapping */
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  padding: 0 10px; /* Inner padding for text */
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 25px;
+  /* Stronger text shadow for a more pronounced glow */
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.hero-butterfly {
+  position: absolute;
+  /* Adjusted positioning to match the original image's relative position to the text */
+  top: -250px; /* Move it up further */
+  left: -80px; /* Move it more to the left, slightly off-screen */
+  width: 400px; /* Increased size to match visual scale */
+  height: auto;
+  opacity: 0.9;
+  transform: rotate(0deg); /* No rotation for now */
+  z-index: 0;
+  /* Refined filter for a more ethereal glow */
+  filter: drop_shadow(0 0 25px rgba(106, 0, 255, 0.8)) blur(1px); /* More blur for a softer glow */
+}
+
+/* Buttons */
+.get-started-btn {
+  padding: 14px 35px; /* Slightly larger padding */
+  border: none;
+  border-radius: 30px; /* More rounded */
+  font-size: 1.15rem; /* Slightly larger font */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  /* Add subtle shadow for lift */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.get-started-btn.primary {
+  background-color: var(--button-primary-bg);
+  color: var(--text-color-light);
+}
+
+.get-started-btn.primary:hover {
+  background-color: var(--button-primary-hover);
+  transform: translateY(-3px); /* More pronounced lift */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.get-started-btn.secondary {
+  background-color: var(--button-secondary-bg);
+  color: var(--text-color-light);
+  border: 1px solid var(--card-border-light);
+}
+
+.get-started-btn.secondary:hover {
+  background-color: var(--button-secondary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* User Dashboard Card */
+.user-dashboard-card {
+  background: linear-gradient(135deg, #674bb8,#7153c7 ,#d8b6ea);
+  border: 1px solid var(--card-border-light);
+  border-radius: 20px;
+  backdrop-filter: blur(25px) saturate(180%); /* Increased blur for stronger effect */
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  padding: 30px;
+  width: 100%;
+  max-width: 400px; /* Slightly wider for the content */
+  min-width: 320px;
+  box-shadow: var(--glass-shadow); /* Using variable for consistent shadow */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: min-content;
+
+  transform: translateY(-100px); 
+}
+
+.user-dashboard-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-dashboard-card .card-header h2 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--text-color-light);
+}
+
+.user-dashboard-card .menu-icon {
+  background: none;
+  border: none;
+  color: var(--text-color-light);
+  font-size: 1.6rem;
+  cursor: pointer;
+  opacity: 0.9;
+  padding: 5px;
+}
+
+.user-dashboard-card .card-tabs {
+  display: flex;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.1); /* Background for tabs container */
+  border-radius: 15px;
+  padding: 5px;
+}
+
+.user-dashboard-card .card-tabs .tab {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  color: var(--text-color-light);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.user-dashboard-card .card-tabs .tab.active {
+  background-color: rgba(255, 255, 255, 0.25);
+  font-weight: bold;
+}
+
+.user-dashboard-card .card-tabs .tab:not(.active):hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.user-dashboard-card .upcoming-trips h3 {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: var(--text-color-light);
+}
+
+.user-dashboard-card .trip-item {
+  background-color: rgba(255, 255, 255, 0.18); /* Slightly more opaque trip item */
+  padding: 15px 20px;
+  border-radius: 15px;
+  color: var(--text-color-light);
+  margin-bottom: 10px;
+}
+
+.user-dashboard-card .trip-destination {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.user-dashboard-card .trip-dates {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+    padding-top: 30px;
+  }
+  .hero-content {
+    max-width: 80%;
+  }
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  .hero-butterfly {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-bottom: 20px;
+    transform: none;
+    width: 300px;
+    filter: drop_shadow(0 0 15px rgba(106, 0, 255, 0.7)) blur(0.5px);
+  }
+  .user-dashboard-card {
+    max-width: 90%;
+    transform: translateY(0); /* Remove transform on smaller screens if it causes issues */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .home-page-container {
+    padding: 0 10px;
+  }
+  .navbar-container {
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .get-started-btn {
+    width: 100%;
+    max-width: 250px;
+  }
+  .user-dashboard-card {
+    padding: 20px;
+  }
+  .user-dashboard-card .card-header h2 {
+    font-size: 1.5rem;
+  }
+}

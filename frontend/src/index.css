@@ -37,14 +37,14 @@ body {
 /* General Link and Button styles if not defined in components */
 a {
   font-weight: 500;
-  color: #646cff; /* Example default link color */
+  color: #646cff; 
   text-decoration: inherit;
 }
 a:hover {
   color: #535bf2;
 }
 
-/* You can remove these if all buttons are styled specifically in components */
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -65,14 +65,14 @@ button:focus-visible {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0; /* Reset default margins */
+  margin: 0; 
 }
 
-/* Light mode preferences, if applicable */
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    /* background-color: #ffffff; We will let LandingPage handle the background */
+
   }
   a:hover {
     color: #747bff;

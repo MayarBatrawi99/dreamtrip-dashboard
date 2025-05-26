@@ -1,7 +1,7 @@
 /* Navbar Specific Styling */
 .navbar-container {
   width: 100%;
-  max-width: 1200px; /* This should match your max-width in LandingPage to keep content aligned */
+  max-width: 1200px; 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,7 +12,7 @@
  
   position: sticky;
   top: 0;
-  /* Using a slightly more opaque version of your background start color for clarity */
+  
  
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -20,7 +20,6 @@
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Rest of the Navbar.css remains the same */
 .logo-section {
   display: flex;
   align-items: center;
@@ -28,8 +27,8 @@
 }
 
 .logo-icon {
-  width: 30px;
-  height: 30px;
+  width: 70px;
+  height: 50px;
 }
 
 .logo-text {
@@ -74,16 +73,19 @@
     flex-direction: column;
     gap: 15px;
     padding: 15px 0;
-    position: relative; /* Consider removing sticky on smaller screens if layout breaks */
+    position: relative;
+    
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
+
   .nav-links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
   }
+
   .nav-links a {
     margin-left: 0;
   }

@@ -1,0 +1,80 @@
+/* Navbar Specific Styling */
+.navbar-container {
+    width: 100%;
+    max-width: 1200px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    color: var(--text-color-light);
+    z-index: 10; /* Ensure navbar is above other content */
+  
+   
+    position: sticky;
+    top: 0;
+    
+   
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+   
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo-icon {
+    width: 70px;
+    height: 50px;
+  }
+  
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+ 
+  .auth-buttons{
+    display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+  }
+  
+  .auth-buttons .sign-in-btn {
+    background: var(--button-primary-bg);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: var(--text-color-light);
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .auth-buttons .sign-in-btn:hover {
+    background-color: var(--button-primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  }
+  
+  /* Responsive adjustments for Navbar */
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-direction: column;
+      gap: 15px;
+      padding: 15px 0;
+      position: relative;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+   
+    
+  }
